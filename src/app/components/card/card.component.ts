@@ -15,8 +15,8 @@ export class CardComponent implements AfterViewInit {
   constructor() { }
 
   ngAfterViewInit(): void {
-    const mousedown = fromEvent(this.container?.nativeElement, 'mousedown');
-    const mouseup = fromEvent(this.container?.nativeElement, 'mouseup');
+    const mousedown = fromEvent(this.container?.nativeElement, 'pointerdown');
+    const mouseup = fromEvent(this.container?.nativeElement, 'pointerup');
 
     mousedown.subscribe(e => {
       const clickTimer = timer(200);
