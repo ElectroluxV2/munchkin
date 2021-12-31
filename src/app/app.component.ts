@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CardService } from './services/card.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'munchkin';
+  cards: string[] = [];
+
+  constructor(public cardService: CardService) {
+    cardService.getCards().then(c => this.cards = c);
+  }
 }
