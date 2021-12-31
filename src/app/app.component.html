@@ -1,17 +1,17 @@
 <main class="screen">
     <div cdkDropList cdkDropListOrientation="horizontal" #topTray="cdkDropList" [cdkDropListData]="topCards" [cdkDropListConnectedTo]="[leftTray, rightTray, bottomTray]" class="top-cards" (cdkDropListDropped)="drop($event)">
-        <app-card class="drag-item" *ngFor="let cardURL of topCards" [cardURL]="cardURL" cdkDrag></app-card>
+        <app-card class="drag-item" *ngFor="let cardURL of topCards" location="top" [cardURL]="cardURL" cdkDrag></app-card>
     </div>
 
     <div cdkDropList cdkDropListOrientation="horizontal" #leftTray="cdkDropList" [cdkDropListData]="leftCards" [cdkDropListConnectedTo]="[topTray, rightTray, bottomTray]" class="left-cards" (cdkDropListDropped)="drop($event)">
-        <app-card class="drag-item" *ngFor="let cardURL of leftCards" [cardURL]="cardURL" cdkDrag></app-card>
+        <app-card class="drag-item" *ngFor="let cardURL of leftCards" location="left" [cardURL]="cardURL" cdkDrag></app-card>
     </div>
 
     <div cdkDropList cdkDropListOrientation="horizontal" #rightTray="cdkDropList" [cdkDropListData]="rightCards" [cdkDropListConnectedTo]="[topTray, leftTray, bottomTray]" class="right-cards" (cdkDropListDropped)="drop($event)">
-        <app-card class="drag-item" *ngFor="let cardURL of rightCards" [cardURL]="cardURL" cdkDrag></app-card>
+        <app-card class="drag-item" *ngFor="let cardURL of rightCards" location="right" [cardURL]="cardURL" cdkDrag></app-card>
     </div>
 
     <div cdkDropList cdkDropListOrientation="horizontal" #bottomTray="cdkDropList" [cdkDropListData]="bottomCards" [cdkDropListConnectedTo]="[topTray, leftTray, rightTray]" class="bottom-cards" (cdkDropListDropped)="drop($event)">
-        <app-card class="drag-item" *ngFor="let cardURL of bottomCards" [cardURL]="cardURL" cdkDrag></app-card>
+        <app-card class="drag-item" *ngFor="let cardURL of bottomCards" location="bottom" [cardURL]="cardURL" cdkDrag></app-card>
     </div>
 </main>

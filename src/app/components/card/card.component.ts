@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { fromEvent, takeUntil, timer } from 'rxjs';
 
 @Component({
@@ -9,6 +9,7 @@ import { fromEvent, takeUntil, timer } from 'rxjs';
 export class CardComponent implements AfterViewInit {
   public enlarged = false;
   @Input("cardURL") cardURL = '';
+  @Input("location") location = '';
   @ViewChild('container') container?: ElementRef;
 
   constructor() { }
